@@ -70,6 +70,14 @@ main {
   background-color: #0d447a;
 }
 
+i {
+  color: #9ab927;
+}
+
+i:hover {
+  opacity: 0.8;
+}
+
 aside {
   grid-area: aside;
   display: flex;
