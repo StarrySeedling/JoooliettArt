@@ -83,7 +83,7 @@ aside {
 aside img {
   height: auto;
   width: 100%;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   margin: 5px;
   margin-top: 0px;
 }
@@ -103,4 +103,10 @@ footer {
   border: 1px black solid;
   border-top: none;
   background-color: #13326b;
+  color: white;
+}
+
+footer a {
+  color: #9ab927;
+  font-weight: bold;
 }
