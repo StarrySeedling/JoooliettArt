@@ -76,6 +76,7 @@ main {
 h2 {
   text-align: center;
   font-family: "Lato", sans-serif;
+  padding-bottom: 20px;
 }
 
 .flex-gallery img {
@@ -90,6 +91,7 @@ h2 {
 aside {
   grid-area: aside;
   min-width: 400px;
+  padding: 5px;
   border: 1px black solid;
   border-left: none;
   background-color: #37587a;
@@ -115,4 +117,10 @@ footer {
   border: 1px black solid;
   border-top: none;
   background-color: #13326b;
+  color: white;
+}
+
+footer a {
+  color: #9ab927;
+  font-weight: bold;
 }
