@@ -1,54 +1,481 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Joooliett Art - Home</title>
-    <link href="index-style.css" rel="stylesheet" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
     <link
-      href="https://fonts.googleapis.com/css?family=Lexend+Mega|Arimo|Lato|Muli&display=swap"
       rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
     />
     <script
       src="https://kit.fontawesome.com/fa1aea46c7.js"
       crossorigin="anonymous"
     ></script>
+    <link href="custom.css" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lexend+Mega|Arimo|Lato|Muli&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="../gallery-image.js"></script>
+
+    <title>Joooliett Art</title>
   </head>
   <body>
-    <header>
-      <span><i class="fas fa-home"></i>  Joooliett Art</span>
-    </header>
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        </li>
-        <li>
-          <a href="gallery.html"><i class="fas fa-photo-video"></i> Gallery</a>
-        </li>
-        <li>
-          <a href="contact.html"><i class="fas fa-id-card"></i> Contact</a>
-        </li>
-        <li>
-          <a href="https://www.etsy.com/shop/JoooliettArt" target="_blank"
-            ><i class="fas fa-shopping-cart"></i> Shop</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <main></main>
-    <aside>
-      <img src="img/profpic.jpg" alt="profpic" />
-      <p>
-        I primarily create acrylic pours with bright and bold color schemes, and
-        occasionally add embellishments with pen. These embellishments are like
-        repetitive doodles that create movement on top of an already complex
-        background. Each piece is signed on the back so that it can be hung in
-        any preferred orientation.
-      </p>
-    </aside>
-    <footer>
-      <small>
-        © Juliet Klesitz 2019 --
-        <a href="mailto:jooliett@gmail.com">Email me!</a></small
+    <div id="home" class="container">
+      <!-- header -->
+      <header class="row">
+        <div class="col imgheader d-flex">
+          <span id="head-text" class="text-white pb-5 pl-2">Joooliett Art</span>
+        </div>
+      </header>
+      <!-- /header -->
+      <!-- nav -->
+      <nav class="row sticky-top border border-dark">
+        <ul class="nav w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="#home"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery"
+              ><i class="fas fa-photo-video"></i> Gallery</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"
+              ><i class="fas fa-id-card"></i> Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.etsy.com/shop/JoooliettArt" target="_blank"
+              ><i class="fas fa-shopping-cart"></i> Shop</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- /nav -->
+      <!-- seasonal / about -->
+      <div class="row">
+        <div id="seasonal" class="col mt-2 mr-1 rounded-lg">
+          SEASONAL
+        </div>
+        <div class="card col-4 mt-2 pt-2 text-white">
+          <img
+            src="../img/profpic.jpg"
+            class="card-img-top border border-dark rounded-lg"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text text-center">
+              I primarily create acrylic pours with bright and bold color
+              schemes, and occasionally add embellishments with pen. These
+              embellishments are like repetitive doodles that create movement on
+              top of an already complex background. Each piece is signed on the
+              back so that it can be hung in any preferred orientation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- seasonal / about -->
+      <!-- gallery -->
+      <!-- modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
       >
-    </footer>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><div id="imgtext"></div></h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img id="expandedImg" style="width:100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /modal 
+        -->
+      <main id="gallery" class="row mt-4 mx-auto">
+        <div id="flex-gallery" class="col border border-dark mt-5 d-flex p-1 justify-content-around">
+          <img
+            src="../img/gallery/1.jpg"
+            alt="1"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/2.jpg"
+            alt="2"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/3.jpg"
+            alt="3"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/4.jpg"
+            alt="4"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/5.jpg"
+            alt="5"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/6.jpg"
+            alt="6"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/7.jpg"
+            alt="7"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/8.jpg"
+            alt="8"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/9.jpg"
+            alt="9"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/10.jpg"
+            alt="10"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/11.jpg"
+            alt="11"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/12.jpg"
+            alt="12"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/13.jpg"
+            alt="13"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/14.jpg"
+            alt="14"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/15.jpg"
+            alt="15"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/16.jpg"
+            alt="16"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/17.jpg"
+            alt="17"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/18.jpg"
+            alt="18"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/19.jpg"
+            alt="19"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/25.jpg"
+            alt="25"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/21.jpg"
+            alt="21"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/22.jpg"
+            alt="22"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/23.jpg"
+            alt="23"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/24.jpg"
+            alt="24"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/25.jpg"
+            alt="25"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/26.jpg"
+            alt="26"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/27.jpg"
+            alt="27"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/28.jpg"
+            alt="28"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/29.jpg"
+            alt="29"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/30.jpg"
+            alt="30"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/31.jpg"
+            alt="31"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+          <img
+            src="../img/gallery/32.jpg"
+            alt="32"
+            class="img-fluid rounded-lg"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onclick="myFunction(this);"
+          />
+        </div>      
+
+        <!-- Video Section-->
+        <aside class="container mx-auto mt-3 d-flex">
+          <div class="row justify-content-around">
+              <!-- Video #1 -->
+              <video controls width="384" height="216">
+                <source src="../video/purp-pour.mp4" type="video/mp4" />
+      
+                <source src="../video/purp-pour.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #2 -->
+              <video controls width="384" height="216">
+                <source src="../video/golden.mp4" type="video/mp4" />
+      
+                <source src="../video/golden.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #3 -->
+              <video controls width="384" height="216">
+                <source src="../video/pour.mp4" type="video/mp4" />
+      
+                <source src="../video/pour.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #4 -->
+              <video controls width="384" height="216">
+                <source src="../video/heart.mp4" type="video/mp4" />
+      
+                <source src="../video/heart.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #5 -->
+              <video controls width="384" height="216">
+                <source src="../video/pour2.mp4" type="video/mp4" />
+      
+                <source src="../video/pour2.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #6 -->
+              <video controls width="384" height="216">
+                <source src="../video/ornaments.mp4" type="video/mp4" />
+      
+                <source src="../video/ornaments.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #7 -->
+              <video controls width="384" height="216">
+                <source src="../video/pour3.mp4" type="video/mp4" />
+      
+                <source src="../video/pour3.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <!-- Video #8 -->
+              <video controls width="384" height="216">
+                <source src="../video/pour4.mp4" type="video/mp4" />
+      
+                <source src="../video/pour4.mp4" type="video/mp4" />
+      
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+        </div>
+      </main>
+      <!-- /gallery -->
+      <footer class="row border border-dark mx-auto mt-4 text-center">
+        <div class="col">
+          <small class="text-white">
+            © Juliet Klesitz 2019 --
+            <a href="mailto:jooliett@gmail.com"
+              >Email me!</a
+            ></small
+          >
+        </div>
+      </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

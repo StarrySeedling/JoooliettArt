@@ -7,6 +7,4 @@ function myFunction(imgs) {
     expandImg.src = imgs.src;
     // Use the value of the alt attribute of the clickable image as text inside the expanded image
     imgText.innerHTML = imgs.alt;
-    // Show the container element (hidden with CSS)
-    expandImg.parentElement.style.display = "block";
   }
