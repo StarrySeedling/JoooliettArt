@@ -91,7 +91,7 @@ footer a:hover {
         font-size: .7em;
       }
       #seasonal {
-        background-image: url("../img/seasonal/three-orn.jpg");
+        background-image: url("img/seasonal/three-orn.jpg");
         background-size: fill;
         min-height: 225px;
     }
