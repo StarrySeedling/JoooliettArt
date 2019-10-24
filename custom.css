@@ -16,9 +16,9 @@ nav {
 }
 
 #seasonal {
-    background-image: url("img/seasonal/three-orn.jpg");
-    background-size: cover;
-    border: 1px solid black;
+  background-image: url("img/seasonal/three-orn.jpg");
+  background-size: cover;
+  border: 1px solid black;
 }
 
 .card {
@@ -41,6 +41,7 @@ nav {
 
 #flex-gallery img {
   width: 135px;
+  height: 135px;
   margin: 1px;
   border: 1px solid black;
 }
@@ -50,8 +51,8 @@ nav {
 }
 
 video {
-    border: 1px solid black;
-    margin: 1px;
+  border: 1px solid black;
+  margin: 1px;
 }
 
 nav ul {
@@ -76,23 +77,25 @@ footer {
 }
 
 footer a {
-    color: #abc629;
-    font-weight: bold;
-    font-size: 1.2em;
+  color: #abc629;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 footer a:hover {
-    color: #abc629;
-    text-decoration: none;
+  color: #abc629;
+  text-decoration: none;
 }
 
 @media (max-width: 991.98px) {
-    nav ul li a {
-        font-size: .7em;
-      }
-      #seasonal {
-        background-image: url("img/seasonal/three-orn.jpg");
-        background-size: fill;
-        min-height: 225px;
-    }
+  nav ul li a {
+    font-size: 0.7em;
+  }
+  #seasonal {
+    background-image: url("img/seasonal/three-orn.jpg");
+    background-size: fill;
+    min-height: 225px;
+  }
+
+  
 }
