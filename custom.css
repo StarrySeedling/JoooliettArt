@@ -96,6 +96,9 @@ footer a:hover {
     min-height: 225px;
   }
   
+}
+
+  
   .background { 
     position: fixed;
     width: 100vw;
@@ -574,7 +577,4 @@ footer a:hover {
     animation-delay: -122s;
     transform-origin: 2vw 17vh;
     box-shadow: -2vmin 0 1.0078271110881794vmin currentColor;
-}
-
-  
 }
